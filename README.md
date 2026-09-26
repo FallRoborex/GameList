@@ -4,7 +4,22 @@ GameList is a personal game-tracking web app where you log, rate, and organize t
 # Game Tracker — Project Scaffold
  
 ## Setup
- 
+
+### Option A: Docker (recommended, especially if you switch machines)
+
+1. Have Docker installed and running.
+2. Build and start the app + Postgres:
+```
+   docker compose up --build
+```
+3. Visit http://localhost:8000/docs to see and test your endpoints interactively.
+
+App code is mounted into the container, so edits on your host are picked up
+by uvicorn's `--reload` without rebuilding. Postgres data persists in a named
+volume (`db_data`) across restarts.
+
+### Option B: Local Python
+
 1. Have Postgres running locally (or update DATABASE_URL in app/database.py
    to point at wherever your DB lives).
 2. Create a virtual environment and install dependencies:
